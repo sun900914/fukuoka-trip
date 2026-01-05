@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>福岡 7 日家庭旅遊</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .hero {
+      background: linear-gradient(135deg, rgba(0,0,0,.55), rgba(0,0,0,.35)),
+                  url("https://images.unsplash.com/photo-1554797589-7241bb691973?auto=format&fit=crop&w=1600&q=60");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="./">福岡 7 日旅遊</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#itinerary">行程</a></li>
+        <li class="nav-item"><a class="nav-link" href="#transport">交通</a></li>
+        <li class="nav-item"><a class="nav-link" href="#checklist">清單</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero py-5">
+  <div class="container py-4">
+    <h1 class="display-5 fw-bold">福岡 7 日家庭旅遊</h1>
+    <p class="lead mb-4">給家人看的行程總覽、集合時間、交通與備案。</p>
+    <div class="d-flex gap-2 flex-wrap">
+      <a class="btn btn-light btn-lg" href="#itinerary">看每日行程</a>
+      <a class="btn btn-outline-light btn-lg" href="#important">重要資訊</a>
+    </div>
+  </div>
+</header>
+
+<main class="container my-5">
+  <section id="important" class="mb-5">
+    <h2 class="h3 fw-bold mb-3">重要資訊</h2>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="fw-semibold">住宿</div>
+            <div class="text-body-secondary">（填入飯店名/地址）</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="fw-semibold">集合規則</div>
+            <div class="text-body-secondary">遲到 10 分鐘即改用備案路線</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="fw-semibold">緊急聯絡</div>
+            <div class="text-body-secondary">（填入電話/保險/醫院）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="itinerary" class="mb-5">
+    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2">
+      <h2 class="h3 fw-bold m-0">每日行程</h2>
+      <span class="text-body-secondary">可先用骨架，之後再補細節</span>
+    </div>
+
+    <div class="row g-3 mt-1">
+      <!-- Day cards -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="fw-semibold">Day 1</div>
+              <span class="badge text-bg-primary">抵達</span>
+            </div>
+            <div class="text-body-secondary mt-2">機場 → 市區 → 晚餐/屋台</div>
+            <a class="btn btn-outline-primary btn-sm mt-3" href="day1.html">查看</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="fw-semibold">Day 2</div>
+              <span class="badge text-bg-success">市區</span>
+            </div>
+            <div class="text-body-secondary mt-2">大濠公園 / 福岡城跡 / 福岡塔</div>
+            <a class="btn btn-outline-primary btn-sm mt-3" href="day2.html">查看</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 其餘 Day 3~7 你照抄一張卡片改文字即可 -->
+    </div>
+  </section>
+
+  <section id="transport" class="mb-5">
+    <h2 class="h3 fw-bold mb-3">交通</h2>
+    <div class="alert alert-info">
+      這裡放「機場進市區」、「地鐵/巴士」、「票券建議」與常用路線連結。
+    </div>
+  </section>
+
+  <section id="checklist" class="mb-5">
+    <h2 class="h3 fw-bold mb-3">行李與待辦</h2>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="fw-semibold mb-2">必帶</div>
+            <ul class="mb-0">
+              <li>護照 / 影本</li>
+              <li>網路（eSIM/Wi-Fi）</li>
+              <li>常備藥</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="fw-semibold mb-2">出發前</div>
+            <ul class="mb-0">
+              <li>確認航班與座位</li>
+              <li>飯店入住時間</li>
+              <li>景點營業時間</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-top py-4">
+  <div class="container text-body-secondary small">
+    © 你的家族旅遊行程網站
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

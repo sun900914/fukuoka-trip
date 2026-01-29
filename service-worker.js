@@ -1,7 +1,7 @@
 const CACHE_NAME = 'fukuoka-trip-v1';
 const ASSETS_TO_CACHE = [
     './',
-    './index_v2.html',
+    './index.html',
     './trip_data.js',
     'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',

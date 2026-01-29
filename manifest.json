@@ -1,7 +1,7 @@
 {
   "name": "福岡 7 天之旅",
   "short_name": "福岡之旅",
-  "start_url": "./index_v2.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#fcefe9",
   "theme_color": "#ff6b6b",

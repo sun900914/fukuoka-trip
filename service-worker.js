@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fukuoka-trip-v2';
+const CACHE_NAME = 'fukuoka-trip-v3';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -10,6 +10,9 @@ const ASSETS_TO_CACHE = [
 
 // Install Event
 self.addEventListener('install', (event) => {
+    // Force this service worker to become active immediately
+    self.skipWaiting();
+
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
@@ -25,7 +28,9 @@ self.addEventListener('fetch', (event) => {
         caches.match(event.request)
             .then((response) => {
                 // Return cached version or fetch from network
-                return response || fetch(event.request);
+                return response || fetch(event.request).catch(() => {
+                    // Optional: Return offline page if fetch fails
+                });
             })
     );
 });
@@ -41,6 +46,9 @@ self.addEventListener('activate', (event) => {
                     }
                 })
             );
+        }).then(() => {
+            // Take control of all clients immediately
+            return self.clients.claim();
         })
     );
 });

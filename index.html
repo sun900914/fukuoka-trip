@@ -44,8 +44,10 @@
     /* Hero Section */
     .hero-header {
       position: relative;
-      background-image: url('https://images.unsplash.com/photo-1571125262174-a035a9d3a776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      /* Dazaifu or clean Shrine image */
+      /* Fallback color in case image fails */
+      background-color: #2c3e50;
+      /* New Image: Fukuoka/Japan Atmosphere */
+      background-image: url('https://images.unsplash.com/photo-1590559899731-a363c37c609d?q=80&w=1920&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -136,7 +138,25 @@
       padding-bottom: 2rem;
       border-left: 2px solid #dfe6e9;
       /* Lighter border */
-      margin-left: 1rem;
+      margin-left: 0.5rem;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .timeline-item {
+        padding-left: 2.5rem;
+        /* More compact */
+        margin-left: 0;
+        /* Flush left */
+      }
+
+      .timeline-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        left: -16px;
+        /* Center on border */
+      }
     }
 
     .timeline-item:last-child {
@@ -483,7 +503,7 @@
 
         tabPane.innerHTML = `
             <div class="card mb-3 border-0">
-                <div class="card-body p-0 p-md-4 bg-transparent">
+                <div class="card-body p-3 p-md-4 bg-transparent">
                     <!-- Date Header -->
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h3 class="fw-bold m-0 text-dark">Day ${day.day}</h3>

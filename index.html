@@ -8,12 +8,12 @@
 
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png">
-  <meta name="theme-color" content="#ff6b6b">
+  <meta name="theme-color" content="#b91c1c">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,72 +22,108 @@
 
   <style>
     :root {
-      --primary-color: #ff6b6b;
-      /* 福岡草莓紅 */
-      --secondary-color: #f8f9fa;
+      /* Japanese Minimalist Palette */
+      --primary-color: #b91c1c;
+      /* Deep Red (Japan Red) */
+      --bg-color: #fcfaf7;
+      /* Off-white (Rice Paper) */
+      --text-color: #2d3436;
+      /* Charcoal */
+      --accent-color: #d63031;
+      --card-bg: #ffffff;
+      --nav-active-bg: #b91c1c;
     }
 
     body {
-      background-color: #fcefe9;
-      /* 淡淡的暖色 */
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      position: relative;
-      /* For ScrollSpy */
+      overflow-x: hidden;
     }
 
-    /* ScrollSpy Active State */
-    .nav-pills .nav-link.active,
-    .navbar-nav .nav-link.active {
-      background-color: transparent;
-      color: #ff6b6b;
-      font-weight: bold;
-      border-bottom: 2px solid #ff6b6b;
-    }
-
-    /* Back to Top Button */
-    #back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      z-index: 1000;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
+    /* Hero Section */
     .hero-header {
-      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1571125262174-a035a9d3a776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      /* Dazaifu or clean Shrine image */
+      background-size: cover;
+      background-position: center;
       color: #fff;
-      padding: 4rem 1rem;
-      /* More padding */
-      border-radius: 0 0 2rem 2rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 6rem 1rem 4rem;
+      margin-bottom: 0;
+      text-align: center;
     }
 
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-weight: 700;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      letter-spacing: 2px;
+    }
+
+    /* Cards */
     .card {
       border: none;
-      border-radius: 1rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      /* Softer shadow */
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      /* Soft, modern shadow */
       margin-bottom: 1.5rem;
+      background-color: var(--card-bg);
       overflow: hidden;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .day-header {
-      padding: 1rem 1.5rem;
-      color: white;
-      font-weight: bold;
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
 
-    .flight-card {
-      background: white;
-      border-left: 5px solid #0d6efd;
+    /* Tabs Navigation */
+    .nav-pills-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 5px;
+      /* space for scrollbar if needed */
+      scrollbar-width: none;
+      /* hide scrollbar for cleaner look */
     }
 
+    .nav-pills-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-pills .nav-link {
+      color: #636e72;
+      background-color: #e9ecef;
+      margin-right: 0.5rem;
+      border-radius: 50rem;
+      /* Pill shape */
+      padding: 0.5rem 1.2rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: var(--nav-active-bg);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(185, 28, 28, 0.4);
+    }
+
+    /* Timeline */
     .timeline {
       list-style: none;
       padding: 0;
@@ -96,118 +132,177 @@
 
     .timeline-item {
       position: relative;
-      padding-left: 3rem;
-      padding-bottom: 1.5rem;
-      border-left: 2px solid #e9ecef;
+      padding-left: 3.5rem;
+      padding-bottom: 2rem;
+      border-left: 2px solid #dfe6e9;
+      /* Lighter border */
       margin-left: 1rem;
     }
 
     .timeline-item:last-child {
-      border-left: none;
+      border-left: color-mix(in srgb, transparent, transparent);
+      /* Invisible border for last item */
+      border-image: linear-gradient(to bottom, #dfe6e9, transparent) 1;
+      border-left: 2px solid transparent;
     }
 
     .timeline-icon {
       position: absolute;
-      left: -1rem;
+      left: -1.25rem;
+      /* Adjusted for larger icon */
       top: 0;
-      width: 2rem;
-      height: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
       background: #fff;
-      border: 2px solid #ff6b6b;
+      border: 3px solid var(--primary-color);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ff6b6b;
-      font-size: 0.9rem;
+      color: var(--primary-color);
+      font-size: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
 
-    .timeline-time {
-      font-size: 0.85rem;
-      color: #6c757d;
-      font-weight: 600;
+    .timeline-icon.food-icon {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: #fff;
+      /* White border for contrast */
     }
 
-    .copy-btn {
-      cursor: pointer;
-      color: #0d6efd;
-      margin-left: 0.5rem;
+    .timeline-content {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: -0.25rem;
     }
 
-    /* Navbar styling adjustments */
-    .navbar-nav .nav-link {
-      color: #555;
-      transition: color 0.3s;
-      margin: 0 0.2rem;
+    /* Weather Widget Styling */
+    .weather-card {
+      background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+      color: white;
     }
 
-    .navbar-nav .nav-link:hover {
-      color: #ff6b6b;
+    /* Back to Top */
+    #back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: none;
+      z-index: 1000;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border: none;
+      background-color: var(--primary-color);
+      color: white;
+      transition: transform 0.3s;
+    }
+
+    #back-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    /* Utility */
+    .text-justify {
+      text-align: justify;
     }
   </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100" tabindex="0">
+<body>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="btn btn-danger" onclick="scrollToTop()">
+  <button id="back-to-top" onclick="scrollToTop()">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" style="opacity: 0.95;">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#" id="nav-title">福岡之旅</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto text-center" id="day-nav">
-          <!-- JS will populate this -->
-        </ul>
+  <header class="hero-header">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="display-3 hero-title" id="main-title">Loading...</h1>
+      <p class="lead fw-normal mb-3" id="sub-title">...</p>
+      <div class="d-inline-flex align-items-center bg-white text-dark px-4 py-2 rounded-pill shadow-sm">
+        <i class="fa-regular fa-calendar-alt me-2 text-danger"></i>
+        <span id="date-range" class="fw-bold">...</span>
       </div>
-    </div>
-  </nav>
-
-  <div style="height: 60px;"></div> <!-- Spacer -->
-
-  <header class="hero-header text-center">
-    <h1 class="display-4 fw-bold" id="main-title">Loading...</h1>
-    <p class="lead" id="sub-title">...</p>
-    <div class="d-inline-flex gap-2">
-      <span class="badge bg-white text-danger" id="date-range">...</span>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container py-4" style="margin-top: -30px; position: relative; z-index: 10;">
 
-    <!-- Flight Info Section -->
-    <section id="flights" class="mb-5">
-      <h3 class="fw-bold mb-3"><i class="fa-solid fa-plane"></i> 航班資訊</h3>
-      <div class="row g-3" id="flight-list">
-        <!-- JS rendered -->
+    <!-- Weather Widget (Mockup link) -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <a href="https://weather.yahoo.co.jp/weather/jp/40/8210.html" target="_blank" class="text-decoration-none">
+          <div
+            class="card weather-card text-white py-3 px-4 d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <i class="fa-solid fa-cloud-sun fa-2x me-3"></i>
+              <div>
+                <h5 class="mb-0 fw-bold">福岡天氣預報</h5>
+                <small>點擊查看 Yahoo! JP 即時氣象</small>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
       </div>
-    </section>
+    </div>
 
-    <!-- Accommodation Section -->
-    <section id="accommodation" class="mb-5">
-      <h3 class="fw-bold mb-3"><i class="fa-solid fa-hotel"></i> 住宿資訊</h3>
-      <div id="hotel-info">
-        <!-- JS rendered -->
+    <!-- Navigation Tabs -->
+    <div class="row mb-4 sticky-top bg-transparent pt-2" style="top: 0px; z-index: 900;">
+      <div class="col-12">
+        <div class="card shadow-sm p-1 rounded-pill d-inline-block d-md-block"
+          style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
+          <div class="nav-pills-wrapper">
+            <ul class="nav nav-pills d-flex flex-nowrap" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info"
+                  type="button" role="tab">
+                  <i class="fa-solid fa-circle-info me-1"></i> 資訊
+                </button>
+              </li>
+              <!-- JS will populate Days here -->
+            </ul>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Itinerary Section -->
-    <section id="itinerary">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="fw-bold mb-0"><i class="fa-solid fa-calendar-days"></i> 每日行程</h3>
-      </div>
-      <div id="days-container">
-        <!-- JS rendered -->
-      </div>
-    </section>
+    <!-- Tab Content -->
+    <div class="tab-content" id="pills-tabContent">
 
-    <!-- Important Data Modal (Hidden by default) -->
+      <!-- Info Tab (Flights & Hotel) -->
+      <div class="tab-pane fade show active" id="pills-info" role="tabpanel">
+
+        <!-- Flight Info -->
+        <section id="flights" class="mb-4">
+          <h4 class="fw-bold mb-3 border-start border-4 border-danger ps-3">航班資訊</h4>
+          <div class="row g-3" id="flight-list">
+            <!-- JS rendered -->
+          </div>
+        </section>
+
+        <!-- Accommodation -->
+        <section id="accommodation" class="mb-4">
+          <h4 class="fw-bold mb-3 border-start border-4 border-danger ps-3">住宿資訊</h4>
+          <div id="hotel-info">
+            <!-- JS rendered -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Days Content will be injected here by JS -->
+
+    </div>
+
+    <!-- Important Data Modal -->
     <div class="modal fade" id="infoModal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -215,17 +310,16 @@
             <h5 class="modal-title">詳細資訊</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body" id="modal-body-content">
-            ...
-          </div>
+          <div class="modal-body" id="modal-body-content">...</div>
         </div>
       </div>
     </div>
 
   </main>
 
-  <footer class="text-center py-4 text-secondary">
-    <small>© 2026 福岡之旅</small>
+  <footer class="text-center py-5 text-secondary border-top">
+    <p class="mb-1 fw-bold">福岡 7 天之旅</p>
+    <small>© 2026 Enjoy your trip!</small>
   </footer>
 
   <!-- Load Data -->
@@ -235,9 +329,8 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // 1. Render Header
-      document.getElementById("nav-title").textContent = tripData.title;
-      document.title = tripData.title;
       document.getElementById("main-title").textContent = tripData.title;
+      document.title = tripData.title;
       document.getElementById("sub-title").textContent = tripData.subtitle;
       document.getElementById("date-range").textContent = `${tripData.meta.startDate} ~ ${tripData.meta.endDate}`;
 
@@ -247,61 +340,60 @@
         const col = document.createElement("div");
         col.className = "col-md-6";
         col.innerHTML = `
-        <div class="card h-100 flight-card p-3">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="badge ${flight.type === 'Arrival' ? 'bg-primary' : 'bg-success'}">${flight.type === 'Arrival' ? '去程' : '回程'}</span>
-            <small class="text-muted">${flight.date}</small>
+        <div class="card h-100 flight-card p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="badge ${flight.type === 'Arrival' ? 'bg-primary' : 'bg-success'} rounded-pill px-3">${flight.type === 'Arrival' ? '去程' : '回程'}</span>
+            <small class="text-secondary fw-bold">${flight.date}</small>
           </div>
-          <h5 class="fw-bold mb-1">${flight.airline} ${flight.flightNo}</h5>
-          <div class="d-flex justify-content-between align-items-center my-3">
+          <h5 class="fw-bold mb-2">${flight.airline} ${flight.flightNo}</h5>
+          <div class="d-flex justify-content-between align-items-center my-4">
             <div class="text-center">
-              <div class="display-6 fw-bold">${flight.departure.time}</div>
-              <small class="text-muted">${flight.departure.city}</small>
+              <div class="display-6 fw-bold text-dark">${flight.departure.time}</div>
+              <small class="text-muted text-uppercase">${flight.departure.city}</small>
             </div>
-            <div class="text-muted"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="text-muted"><i class="fa-solid fa-plane fa-lg"></i></div>
             <div class="text-center">
-              <div class="display-6 fw-bold">${flight.arrival.time}</div>
-              <small class="text-muted">${flight.arrival.city}</small>
+              <div class="display-6 fw-bold text-dark">${flight.arrival.time}</div>
+              <small class="text-muted text-uppercase">${flight.arrival.city}</small>
             </div>
           </div>
-          <div class="alert alert-light border mb-0 py-2 small">
-            <i class="fa-solid fa-circle-info text-info"></i> ${flight.note}
+          <div class="bg-light rounded p-3 small text-secondary">
+            <i class="fa-solid fa-circle-info text-info me-1"></i> ${flight.note}
           </div>
         </div>
       `;
         flightContainer.appendChild(col);
       });
 
-      // 2.5 Render Accommodation
+      // 3. Render Accommodation
       if (tripData.meta.hotel) {
         const hotel = tripData.meta.hotel;
         const hotelDiv = document.getElementById("hotel-info");
-
-        // Extract query from mapUrl if possible or use a generic search embed
-        // For simplicity, we'll use a search embed with the address
         const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(hotel.name + " " + hotel.address)}&output=embed`;
 
         hotelDiv.innerHTML = `
         <div class="card border-0 shadow-sm overflow-hidden">
           <div class="row g-0">
-            <div class="col-md-8 p-4">
-              <h4 class="fw-bold mb-2">${hotel.name}</h4>
-              <div class="text-secondary mb-3">
-                <i class="fa-solid fa-location-dot text-danger me-1"></i>
-                <span id="hotel-address" class="me-2">${hotel.address}</span>
-                <button class="btn btn-outline-secondary btn-sm rounded-pill" onclick="copyAddress()">
-                  <i class="fa-regular fa-copy"></i> 複製
-                </button>
+            <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+              <h4 class="fw-bold mb-3">${hotel.name}</h4>
+              <div class="d-flex align-items-start mb-3">
+                <i class="fa-solid fa-location-dot text-danger mt-1 me-2"></i>
+                <div>
+                    <span id="hotel-address" class="d-block mb-1">${hotel.address}</span>
+                    <button class="btn btn-sm btn-link text-decoration-none p-0" onclick="copyAddress()">複製地址</button>
+                </div>
               </div>
-              <a href="${hotel.mapUrl}" target="_blank" class="btn btn-primary rounded-pill px-4">
-                <i class="fa-solid fa-map-location-dot me-1"></i> Google Maps 導航
-              </a>
+              <div class="mt-2">
+                  <a href="${hotel.mapUrl}" target="_blank" class="btn btn-outline-danger rounded-pill px-4">
+                    <i class="fa-solid fa-map-location-dot me-1"></i> Google Maps
+                  </a>
+              </div>
             </div>
-            <div class="col-md-4 bg-light" style="min-height: 200px;">
+            <div class="col-md-5 bg-light" style="min-height: 250px;">
                <iframe 
                  width="100%" 
                  height="100%" 
-                 style="border:0; min-height: 200px;" 
+                 style="border:0;" 
                  loading="lazy" 
                  allowfullscreen 
                  src="${mapEmbedUrl}">
@@ -312,81 +404,80 @@
       `;
       }
 
-      // 3. Render Days
-      const daysContainer = document.getElementById("days-container");
-      const navList = document.getElementById("day-nav");
+      // 4. Render Days (Tabs & Content)
+      const navList = document.getElementById("pills-tab");
+      const tabContentContainer = document.getElementById("pills-tabContent");
 
       tripData.days.forEach((day, index) => {
-        // Add Nav Item
-        const navItem = document.createElement("li");
-        navItem.className = "nav-item";
-        navItem.innerHTML = `<a class="nav-link" href="#day-${day.day}">Day ${day.day}</a>`;
-        navList.appendChild(navItem);
+        // A. Add Tab Button
+        const tabItem = document.createElement("li");
+        tabItem.className = "nav-item";
+        tabItem.role = "presentation";
+        tabItem.innerHTML = `
+            <button class="nav-link" id="pills-day${day.day}-tab" data-bs-toggle="pill" data-bs-target="#pills-day${day.day}" type="button" role="tab">
+                Day ${day.day}
+            </button>`;
+        navList.appendChild(tabItem);
 
-        // Render Day Card
-        const daySection = document.createElement("div");
-        daySection.id = `day-${day.day}`;
-        daySection.className = "card mb-4";
+        // B. Render Tab Content (Day Details)
+        const tabPane = document.createElement("div");
+        tabPane.className = "tab-pane fade";
+        tabPane.id = `pills-day${day.day}`;
+        tabPane.role = "tabpanel";
 
-        // Timeline HTML
+        // Timeline Items
         const timelineHtml = day.schedule.map(item => {
           const isFood = item.title.includes("早餐") || item.title.includes("午餐") || item.title.includes("晚餐");
-          const titleClass = isFood ? "fw-bold mb-0 text-danger" : "fw-bold mb-0";
+          const titleClass = isFood ? "fw-bold mb-1 text-danger" : "fw-bold mb-1";
+          const iconClass = isFood ? "food-icon" : "bg-white";
 
           return `
         <li class="timeline-item">
-          <div class="timeline-icon ${isFood ? 'bg-danger text-white border-danger' : ''}">
+          <div class="timeline-icon ${iconClass}">
             <i class="fa-solid fa-${item.icon || 'circle'}"></i>
           </div>
-          <h6 class="${titleClass}">${item.title}</h6>
-          <div class="text-muted small">${item.desc}</div>
+          <div class="timeline-content shadow-sm">
+             <h6 class="${titleClass}">${item.title}</h6>
+             <div class="text-secondary small mb-0">${item.desc}</div>
+          </div>
         </li>
       `}).join('');
 
-        // Highlights Tags
+        // Highlights
         const highlightsHtml = day.highlights.map(h =>
-          `<span class="badge bg-light text-dark border me-1">${h}</span>`
+          `<span class="badge rounded-pill bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 me-1 mb-1 px-3 py-2">${h}</span>`
         ).join('');
 
-        daySection.innerHTML = `
-        <div class="day-header" style="background-color: ${getColor(day.color)}">
-          <div class="d-flex justify-content-between align-items-center">
-            <h4 class="m-0">Day ${day.day} - ${day.location}</h4>
-            <span>${day.date}</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="mb-3">
-            ${highlightsHtml}
-          </div>
-          
-          <div class="p-3 bg-light rounded mb-3">
-            <i class="fa-solid fa-train text-secondary"></i> <strong class="ms-1">交通：</strong> ${day.transport}
-          </div>
+        tabPane.innerHTML = `
+            <div class="card mb-3">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h3 class="fw-bold m-0 text-dark">Day ${day.day}</h3>
+                        <span class="badge bg-dark rounded-pill">${day.date}</span>
+                    </div>
+                    <h5 class="text-danger mb-4"><i class="fa-solid fa-map-pin me-2"></i>${day.location}</h5>
+                    
+                    <div class="mb-4">
+                        ${highlightsHtml}
+                    </div>
 
-          <ul class="timeline">
-            ${timelineHtml}
-          </ul>
-        </div>
-      `;
-        daysContainer.appendChild(daySection);
+                    <div class="p-3 bg-light rounded-3 mb-4 d-flex align-items-center">
+                         <i class="fa-solid fa-train text-secondary fa-lg me-3"></i>
+                         <div>
+                            <small class="text-uppercase text-muted fw-bold" style="font-size: 0.7rem;">TRANSPORT</small>
+                            <div class="fw-bold">${day.transport}</div>
+                         </div>
+                    </div>
+
+                    <ul class="timeline">
+                        ${timelineHtml}
+                    </ul>
+                </div>
+            </div>
+        `;
+        tabContentContainer.appendChild(tabPane);
       });
     });
-
-
-    function getColor(colorName) {
-      const colors = {
-        blue: '#4a90e2',
-        teal: '#00b894',
-        orange: '#fdcb6e', // darker for text contrast? actually header bg
-        red: '#ff7675',
-        cyan: '#00cec9',
-        indigo: '#6c5ce7',
-        gray: '#636e72',
-        primary: '#ff6b6b'
-      };
-      return colors[colorName] || colors.primary;
-    }
 
     function copyAddress() {
       const address = document.getElementById("hotel-address").innerText;
@@ -397,7 +488,7 @@
       });
     }
 
-    // Back to Top Logic
+    // Back to Top logic
     const backToTopBtn = document.getElementById("back-to-top");
     window.onscroll = function () {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -406,16 +497,14 @@
         backToTopBtn.style.display = "none";
       }
     };
-
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // PWA Service Worker Registration
+    // PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
-          .then((reg) => console.log('Service Worker Registered!', reg))
           .catch((err) => console.log('Service Worker Registration Failed!', err));
       });
     }

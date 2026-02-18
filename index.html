@@ -257,13 +257,13 @@
     <!-- Navigation Tabs -->
     <div class="row mb-4 sticky-top bg-transparent pt-2" style="top: 0px; z-index: 900;">
       <div class="col-12">
-        <div class="card shadow-sm p-1 rounded-pill d-inline-block d-md-block"
+        <div class="card shadow-sm p-1 rounded-pill d-block"
           style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
           <div class="nav-pills-wrapper">
             <ul class="nav nav-pills d-flex flex-nowrap" id="pills-tab" role="tablist">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-info-tab" data-bs-toggle="pill" data-bs-target="#pills-info"
-                  type="button" role="tab">
+                  type="button" role="tab" style="white-space: nowrap;">
                   <i class="fa-solid fa-circle-info me-1"></i> 資訊
                 </button>
               </li>
@@ -414,7 +414,7 @@
         tabItem.className = "nav-item";
         tabItem.role = "presentation";
         tabItem.innerHTML = `
-            <button class="nav-link" id="pills-day${day.day}-tab" data-bs-toggle="pill" data-bs-target="#pills-day${day.day}" type="button" role="tab">
+            <button class="nav-link" id="pills-day${day.day}-tab" data-bs-toggle="pill" data-bs-target="#pills-day${day.day}" type="button" role="tab" style="white-space: nowrap;">
                 Day ${day.day}
             </button>`;
         navList.appendChild(tabItem);
@@ -434,21 +434,34 @@
         );
 
         // 1. Dining HTML (Separate Cards)
-        const diningHtml = diningItems.map(item => `
+        const diningHtml = diningItems.map(item => {
+          // Extract URL from desc
+          const msgMatch = item.desc.match(/href=['"](.*?)['"]/);
+          const mapUrl = msgMatch ? msgMatch[1] : null;
+          // Clean Desc
+          const cleanDesc = item.desc.replace(/<a.*?>.*?<\/a>/, '').trim().replace(/[\(\)]/g, '').trim();
+
+          return `
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm dining-card">
-                    <div class="card-body p-3 d-flex align-items-center">
-                        <div class="rounded-circle bg-danger bg-opacity-10 text-danger p-3 me-3 d-flex align-items-center justify-content-center" style="width:50px; height:50px;">
-                            <i class="fa-solid fa-${item.icon || 'utensils'}"></i>
+                    <div class="card-body p-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-danger bg-opacity-10 text-danger p-3 me-3 d-flex align-items-center justify-content-center" style="width:50px; height:50px; flex-shrink:0;">
+                                <i class="fa-solid fa-${item.icon || 'utensils'}"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1 text-dark">${item.title}</h6>
+                                <div class="small text-muted">${cleanDesc}</div>
+                            </div>
                         </div>
-                        <div>
-                            <h6 class="fw-bold mb-1 text-dark">${item.title}</h6>
-                            <div class="small text-muted">${item.desc}</div>
-                        </div>
+                        ${mapUrl ? `
+                        <a href="${mapUrl}" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill w-100">
+                            <i class="fa-solid fa-map-location-dot me-1"></i> Google Maps
+                        </a>` : ''}
                     </div>
                 </div>
             </div>
-        `).join('');
+        `}).join('');
 
         // 2. Timeline HTML (Schedule Only)
         const timelineHtml = scheduleItems.map(item => `

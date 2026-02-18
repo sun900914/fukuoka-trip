@@ -329,16 +329,19 @@
         daySection.className = "card mb-4";
 
         // Timeline HTML
-        const timelineHtml = day.schedule.map(item => `
+        const timelineHtml = day.schedule.map(item => {
+          const isFood = item.title.includes("早餐") || item.title.includes("午餐") || item.title.includes("晚餐");
+          const titleClass = isFood ? "fw-bold mb-0 text-danger" : "fw-bold mb-0";
+
+          return `
         <li class="timeline-item">
-          <div class="timeline-icon">
+          <div class="timeline-icon ${isFood ? 'bg-danger text-white border-danger' : ''}">
             <i class="fa-solid fa-${item.icon || 'circle'}"></i>
           </div>
-          <div class="timeline-time">${item.time}</div>
-          <h6 class="fw-bold mb-0">${item.title}</h6>
-          <small class="text-muted">${item.desc}</small>
+          <h6 class="${titleClass}">${item.title}</h6>
+          <div class="text-muted small">${item.desc}</div>
         </li>
-      `).join('');
+      `}).join('');
 
         // Highlights Tags
         const highlightsHtml = day.highlights.map(h =>

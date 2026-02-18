@@ -44,10 +44,11 @@
     /* Hero Section */
     .hero-header {
       position: relative;
-      /* Gradient Background (Guaranteed to show) */
-      background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+      /* Local Image Background */
+      background-image: url('./background.jpg?v=1');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
       color: #fff;
       padding: 6rem 1rem 4rem;
       margin-bottom: 0;
@@ -143,8 +144,8 @@
     /* Mobile Adjustments */
     @media (max-width: 768px) {
       .timeline-item {
-        padding-left: 2rem;
-        /* reduced from 2.5rem */
+        padding-left: 1.5rem;
+        /* Further reduced from 2rem */
         margin-left: 0;
       }
 

@@ -43,7 +43,7 @@ const tripData = {
         { time: "18:55", title: "抵達福岡機場", desc: "前往A2出口搭接駁車至地鐵站", icon: "plane-arrival" },
         { time: "20:00", title: "前往飯店", desc: "搭地鐵兩站至博多站，Check-in", icon: "hotel" },
         { time: "21:00", title: "博多車站夜景", desc: "頂樓「鐵道神社」", icon: "city" },
-        { time: "21:30", title: "晚餐：博多もつ鍋 前田屋 総本店", desc: "牛腸鍋 (飯店步行12分) <a href='https://maps.app.goo.gl/wZ3AVvoxzvVB50D3U' target='_blank'>地圖</a>", icon: "utensils" }
+        { time: "21:30", title: "晚餐：私房推薦美食", desc: "在地必吃 (點擊查看地圖) <a href='https://maps.app.goo.gl/yzZB5vhr6ucv46Bp7' target='_blank'>地圖</a>", icon: "utensils" }
       ]
     },
     {

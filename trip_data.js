@@ -145,5 +145,12 @@ const tripData = {
         { time: "22:00", title: "抵達高雄", desc: "甜蜜的家", icon: "home" }
       ]
     }
+  ],
+  recommendations: [
+    { category: "拉麵", title: "博多拉麵 ShinShin (天神本店)", desc: "福岡藝人最愛！濃厚豚骨湯頭，麵條極細。", googleMap: "https://goo.gl/maps/xyz123", icon: "bowl-food" },
+    { category: "拉麵", title: "一蘭拉麵 總本店", desc: "朝聖必去！整棟的拉麵總部，昭和復古風。", googleMap: "https://goo.gl/maps/abc456", icon: "utensils" },
+    { category: "甜點", title: "鈴懸 (Suzukake) 本店", desc: "90年老字號和菓子，草莓大福是極品。", googleMap: "https://goo.gl/maps/def789", icon: "cookie-bite" },
+    { category: "屋台", title: "中洲屋台街", desc: "體驗福岡夜生活，關東煮、烤雞串。", googleMap: "https://goo.gl/maps/ghi012", icon: "beer-mug-empty" },
+    { category: "燒肉", title: "博多燒肉 Nikuichi", desc: "CP值超高的黑毛和牛燒肉。", googleMap: "https://goo.gl/maps/jkl345", icon: "fire" }
   ]
 };

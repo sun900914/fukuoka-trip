@@ -44,10 +44,8 @@
     /* Hero Section */
     .hero-header {
       position: relative;
-      /* Fallback color in case image fails */
-      background-color: #2c3e50;
-      /* New Image: Fukuoka/Japan Atmosphere */
-      background-image: url('https://images.unsplash.com/photo-1590559899731-a363c37c609d?q=80&w=1920&auto=format&fit=crop');
+      /* Gradient Background (Guaranteed to show) */
+      background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
       background-size: cover;
       background-position: center;
       color: #fff;
@@ -62,7 +60,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+      background: rgba(0, 0, 0, 0.2);
+      /* Slight darken */
       z-index: 1;
     }
 
@@ -73,7 +72,7 @@
 
     .hero-title {
       font-weight: 700;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       letter-spacing: 2px;
     }
 
@@ -144,44 +143,41 @@
     /* Mobile Adjustments */
     @media (max-width: 768px) {
       .timeline-item {
-        padding-left: 2.5rem;
-        /* More compact */
+        padding-left: 2rem;
+        /* reduced from 2.5rem */
         margin-left: 0;
-        /* Flush left */
       }
 
       .timeline-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-        left: -16px;
-        /* Center on border */
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+        left: -14px;
+        /* Center 28px icon on border */
+        top: 2px;
       }
     }
 
     .timeline-item:last-child {
-      border-left: color-mix(in srgb, transparent, transparent);
-      /* Invisible border for last item */
-      border-image: linear-gradient(to bottom, #dfe6e9, transparent) 1;
       border-left: 2px solid transparent;
     }
 
     .timeline-icon {
       position: absolute;
-      left: -1.25rem;
-      /* Adjusted for larger icon */
+      left: -20px;
+      /* Center 40px icon on border */
       top: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      background: #fff;
-      border: 3px solid var(--primary-color);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
+      background-color: #fff;
+      border: 2px solid #dfe6e9;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary-color);
-      font-size: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: var(--accent-color);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      /* Soft shadow */
       z-index: 10;
     }
 

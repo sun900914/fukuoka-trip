@@ -42,7 +42,8 @@ const tripData = {
         { time: "15:30", title: "高雄起飛", desc: "搭乘 BR120", icon: "plane-departure" },
         { time: "18:55", title: "抵達福岡機場", desc: "前往A2出口搭接駁車至地鐵站", icon: "plane-arrival" },
         { time: "20:00", title: "前往飯店", desc: "搭地鐵兩站至博多站，Check-in", icon: "hotel" },
-        { time: "21:00", title: "博多車站 (Hakata City)", desc: "頂樓「鐵道神社」看夜景、晚餐", icon: "city" }
+        { time: "21:00", title: "博多車站夜景", desc: "頂樓「鐵道神社」", icon: "city" },
+        { time: "21:30", title: "晚餐：博多もつ鍋 前田屋 総本店", desc: "牛腸鍋 (飯店步行12分) <a href='https://maps.app.goo.gl/wZ3AVvoxzvVB50D3U' target='_blank'>地圖</a>", icon: "utensils" }
       ]
     },
     {
@@ -53,12 +54,14 @@ const tripData = {
       highlights: ["櫛田神社", "福岡塔夜景", "大濠公園"],
       transport: "地鐵 / 巴士 (西鐵巴士W1/302)",
       schedule: [
-        { time: "09:00", title: "大濠公園 & 福岡城", desc: "舞鶴公園散步 (地鐵大濠公園站)", icon: "tree" },
+        { time: "09:00", title: "早餐：The Full Full Hakata", desc: "明太子法棍 (川端通商店街) <a href='https://maps.app.goo.gl/68EANsmf46c5FdZe9' target='_blank'>地圖</a>", icon: "bread-slice" },
+        { time: "10:00", title: "大濠公園 & 福岡城", desc: "舞鶴公園散步 (地鐵大濠公園站)", icon: "tree" },
         { time: "11:00", title: "櫛田神社", desc: "博多總鎮守，看巨大山笠 (地鐵祗園站)", icon: "torii-gate" },
-        { time: "12:00", title: "川端通商店街", desc: "步行3分，順便買明太子法棍", icon: "shopping-bag" },
+        { time: "12:30", title: "午餐：いくら博多店", desc: "狗掌漢堡排蛋包飯 (櫛田神社旁) <a href='https://maps.app.goo.gl/pfazhV4uRd7USWC0d' target='_blank'>地圖</a>", icon: "utensils" },
         { time: "14:00", title: "博多運河城", desc: "購物、看建築設計", icon: "building" },
         { time: "17:30", title: "前往福岡塔", desc: "天神巴士總站前(1A)搭W1或302巴士", icon: "bus" },
-        { time: "18:30", title: "福岡塔夜景", desc: "欣賞360度夜景 (門票1000日圓)", icon: "star" }
+        { time: "18:30", title: "福岡塔夜景", desc: "欣賞360度夜景 (門票1000日圓)", icon: "star" },
+        { time: "20:00", title: "晚餐：大東園", desc: "燒肉名店 (運河城步行4分) <a href='https://maps.app.goo.gl/RZXK4Qe2c1vdMKow8' target='_blank'>地圖</a>", icon: "fire" }
       ]
     },
     {
@@ -72,7 +75,8 @@ const tripData = {
         { time: "08:15", title: "集合出發", desc: "地點：羅森 福岡東方飯店", icon: "users" },
         { time: "10:00", title: "太宰府天滿宮", desc: "梅枝餅、星巴克", icon: "torii-gate" },
         { time: "13:00", title: "由布院散策", desc: "湯之坪街道、金鱗湖", icon: "walking" },
-        { time: "19:30", title: "返回博多", desc: "行程結束", icon: "bus" }
+        { time: "19:30", title: "返回博多", desc: "行程結束", icon: "bus" },
+        { time: "20:00", title: "晚餐：鰻魚四代目菊川", desc: "中洲春吉店 鰻魚飯 (博多站步行19分) <a href='https://maps.app.goo.gl/EDtrNXcRQFsR6r8DA' target='_blank'>地圖</a>", icon: "fish" }
       ]
     },
     {
@@ -85,9 +89,10 @@ const tripData = {
       schedule: [
         { time: "09:00", title: "前往別府", desc: "搭乘 JR Sonic 音速號", icon: "train" },
         { time: "10:30", title: "別府地獄巡禮", desc: "海地獄、灶地獄 (搭巴士5/7/41號)", icon: "cloud-meatball" },
-        { time: "13:00", title: "午餐：地獄蒸工房", desc: "體驗用溫泉蒸氣蒸食物 (鐵輪站)", icon: "utensils" },
+        { time: "13:00", title: "午餐：地獄蒸工房", desc: "體驗用溫泉蒸氣蒸食物 <a href='https://maps.app.goo.gl/y9PTJV81xoTf6r678' target='_blank'>地圖</a>", icon: "utensils" },
         { time: "15:00", title: "別府足湯", desc: "海地獄 或 Cafe SHU", icon: "coffee" },
-        { time: "17:30", title: "返回博多", desc: "或至天神晚餐", icon: "train" }
+        { time: "17:30", title: "返回博多", desc: "或至天神晚餐", icon: "train" },
+        { time: "19:30", title: "晚餐：天麩羅処ひらお", desc: "大名店 (近天神) + 體驗中洲屋台 <a href='https://maps.app.goo.gl/akcbUcugTn6tXYPQ7' target='_blank'>地圖</a>", icon: "utensils" }
       ]
     },
     {
@@ -98,13 +103,13 @@ const tripData = {
       highlights: ["唐戶市場", "門司港懷舊", "小倉城"],
       transport: "JR 音速號 + 渡船 + 電車",
       schedule: [
-        { time: "09:00", title: "Dacomecc", desc: "飯店步行12分買麵包/早餐", icon: "bread-slice" },
+        { time: "09:00", title: "早餐：Dacomecc", desc: "人氣明太子法棍 (飯店步行12分) <a href='https://maps.app.goo.gl/aoJ9eCC66Mdh2gxk9' target='_blank'>地圖</a>", icon: "bread-slice" },
         { time: "10:30", title: "門司港車站", desc: "大正時期復古車站拍照", icon: "camera" },
         { time: "11:30", title: "唐戶市場", desc: "搭船過海去吃海鮮握壽司", icon: "fish" },
-        { time: "13:30", title: "門司港懷舊區", desc: "藍翼橋、香蕉人、鐵道紀念館", icon: "anchor" },
+        { time: "13:30", title: "午餐：伽哩本舖 / Princess Phi Phi", desc: "燒咖哩 <a href='https://maps.app.goo.gl/ThndpJoafQpcj5nM6' target='_blank'>地圖</a>", icon: "utensils" },
         { time: "15:30", title: "小倉城 & 庭園", desc: "搭電車至小倉 (約15分)", icon: "archway" },
         { time: "17:30", title: "旦過市場", desc: "北九州的廚房，昭和氣氛", icon: "store" },
-        { time: "19:00", title: "返回博多", desc: "晚餐", icon: "train" }
+        { time: "19:00", title: "晚餐：博多一幸舍", desc: "博多本店 拉麵 (博多站步行21分) <a href='https://maps.app.goo.gl/6rnfbLgV0Kml6oabA' target='_blank'>地圖</a>", icon: "utensils" }
       ]
     },
     {
@@ -117,11 +122,11 @@ const tripData = {
       schedule: [
         { time: "08:30", title: "前往熊本/阿蘇", desc: "搭乘新幹線轉車至阿蘇", icon: "mountain" },
         { time: "10:30", title: "阿蘇火山", desc: "欣賞壯觀火山口", icon: "volcano" },
-        { time: "13:30", title: "熊本城", desc: "壯觀天守閣與石牆", icon: "archway" },
-        { time: "15:00", title: "城彩苑 & 商店街", desc: "櫻之馬場吃小吃、上下通逛街", icon: "shopping-bag" },
+        { time: "13:00", title: "午餐：勝烈亭豬排", desc: "鹿兒島六白黑豬 (南熊本站) <a href='https://maps.app.goo.gl/suDe3ruvfP6XFbUE6' target='_blank'>地圖</a>", icon: "utensils" },
+        { time: "14:30", title: "熊本城 & 城彩苑", desc: "壯觀天守閣與石牆", icon: "archway" },
         { time: "16:30", title: "水前寺成趣園", desc: "日式迴遊庭園", icon: "tree" },
         { time: "17:30", title: "Kumamon Square", desc: "部長辦公室 (鶴屋百貨)", icon: "smile" },
-        { time: "19:00", title: "晚餐：勝烈亭/壽司", desc: "鹿兒島六白黑豬排 或 Mekkemon Sushi", icon: "utensils" }
+        { time: "19:00", title: "晚餐：Mekkemon Sushi", desc: "熊本車站對面迴轉壽司 <a href='https://maps.app.goo.gl/rDpgJNCfe2BnvamLA' target='_blank'>地圖</a>", icon: "fish" }
       ]
     },
     {
@@ -132,6 +137,7 @@ const tripData = {
       highlights: ["天神購物", "機場免稅店"],
       transport: "地鐵 / 計程車",
       schedule: [
+        { time: "09:00", title: "早餐", desc: "飯店享用 / 附近咖啡店", icon: "coffee" },
         { time: "11:00", title: "退房 & 寄放行李", desc: "收拾好心情", icon: "suitcase" },
         { time: "12:00", title: "天神商圈補貨", desc: "Parco、大丸、岩田屋", icon: "shopping-cart" },
         { time: "16:00", title: "前往機場", desc: "取回行李出發", icon: "taxi" },

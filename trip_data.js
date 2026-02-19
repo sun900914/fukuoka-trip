@@ -115,17 +115,16 @@ const tripData = {
     {
       day: 6,
       date: "2/24 (二)",
-      location: "阿蘇 & 熊本",
+      location: "熊本一日遊",
       color: "indigo",
-      highlights: ["阿蘇火山", "熊本城", "熊本部長"],
-      transport: "新幹線 + 豐肥本線/巴士",
+      highlights: ["熊本城", "水前寺成趣園", "熊本部長"],
+      transport: "新幹線 + 路面電車",
       schedule: [
-        { time: "08:30", title: "前往熊本/阿蘇", desc: "搭乘新幹線轉車至阿蘇", icon: "mountain" },
-        { time: "10:30", title: "阿蘇火山", desc: "欣賞壯觀火山口", icon: "volcano" },
+        { time: "09:30", title: "前往熊本", desc: "搭乘新幹線 (博多→熊本 約40分)", icon: "train" },
+        { time: "10:30", title: "水前寺成趣園", desc: "漂亮的日式迴遊庭園 <a href='https://www.google.com/maps/search/水前寺成趣園' target='_blank'>地圖</a>", icon: "tree" },
         { time: "13:00", title: "午餐：勝烈亭豬排 (南熊本店)", desc: "鹿兒島六白黑豬 (米其林推薦)<br>營業時間: 11:00-21:30 <a href='https://maps.app.goo.gl/suDe3ruvfP6XFbUE6' target='_blank'>地圖</a>", icon: "utensils" },
-        { time: "14:30", title: "熊本城 & 城彩苑", desc: "壯觀天守閣與石牆", icon: "archway" },
-        { time: "16:30", title: "水前寺成趣園", desc: "日式迴遊庭園", icon: "tree" },
-        { time: "17:30", title: "Kumamon Square", desc: "部長辦公室 (鶴屋百貨)", icon: "smile" },
+        { time: "14:30", title: "熊本城 & 櫻之馬場 城彩苑", desc: "壯觀天守閣 (門票800日圓) & 城下町特色小吃<br>(海膽可樂餅、いきなり団子) <a href='https://www.google.com/maps/search/熊本城' target='_blank'>地圖</a>", icon: "archway" },
+        { time: "17:00", title: "熊本部長辦公室 & 上通下通", desc: "鶴屋百貨找部長 & 逛超長商店街(藥妝便宜) <a href='https://www.google.com/maps/search/Kumamon+Square' target='_blank'>地圖</a>", icon: "smile" },
         { time: "19:00", title: "晚餐：Mekkemon Sushi", desc: "熊本站前迴轉壽司<br>營業時間: 11:00-14:30、17:00-21:00 <a href='https://maps.app.goo.gl/rDpgJNCfe2BnvamLA' target='_blank'>地圖</a>", icon: "fish" }
       ]
     },
@@ -200,6 +199,7 @@ const tripData = {
     { category: "早餐", title: "内野雞蛋直販所", desc: "生雞蛋拌飯、親子丼專賣 (博多站內 Ming)", googleMap: "https://www.google.com/maps/search/うちのたまご+直売所", icon: "egg" },
     { category: "麵包", title: "Bread Espresso & Hakata", desc: "法式吐司有名", googleMap: "https://www.google.com/maps/search/パンとエスプレッソと博多っと", icon: "bread-slice" },
     { category: "麵包", title: "BOUL'ANGE", desc: "美味的可頌麵包", googleMap: "https://www.google.com/maps/search/BOUL'ANGE+博多", icon: "bread-slice" },
+    { category: "甜點", title: "I'm donut? 福岡店", desc: "超人氣排隊生甜甜圈 (天神南)", googleMap: "https://maps.app.goo.gl/gPbgb7UghxCk6ujF9", icon: "cookie-bite" },
     { category: "咖啡", title: "NOOICE hakata", desc: "澳洲風格早午餐", googleMap: "https://www.google.com/maps/search/NOOICE+hakata", icon: "mug-hot" },
 
     // 明太子
